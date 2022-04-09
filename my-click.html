@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My JS Click</title>
+    <style>
+      div {
+        width: 60px;
+        height: 60px;
+        float: left;
+        margin: 5px;
+      }
+
+      #blockParent {
+          border: 1px dotted burlywood;
+          height: 200px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <span id="result">Here show the result</span>
+    <section id="blockParent">
+      <!-- <section id="blockParent"> -->
+      <div class="blocks" id="blocks block1" style="background-color: blue"></div>
+      <div class="blocks" id="blocks block1" style="background-color: beige"></div>
+      <div class="blocks" id="blocks block1" style="background-color: brown"></div>
+      <div class="blocks" id="blocks block1" style="background-color: black"></div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+
+    <script id="click-js">
+    //   var divCollect = document.getElementsByTagName("div");
+        // var divCollect = document.getElementById("blocks");
+      var divCollect = document.querySelector("#blockParent");
+    // var divCollect = document.getElementsByClassName("blocks");
+
+      var divElem1 = document.getElementById("blocks1");
+      var divElem2 = document.getElementById("blocks2");
+      var result = document.getElementById("result");
+
+      result.innerText = "before clicking";
+      var onClick = function () {
+        // result.innerText = "Clicked";
+        result.innerText = "The color is " + this.style.backgroundColor;
+      };
+
+      // divElem1.addEventListener("click", onClick);
+      // divElem2.addEventListener("click", onClick);
+    //   console.log("Collection #"+divCollect.length);
+    //   console.log("Collection #"+divCollect);
+    //   [...divCollect].forEach(elem => elem.addEventListener("click", onClick));
+
+    // $("div").click(onClick);
+
+    //   divCollect.forEach(elem => console.log("color is "+ elem.style.backgroundcolor));
+
+        // divCollect.forEach(elem => elem.addEventListener("click", onClick));
+
+    //   divCollect[0].addEventListener("click", onClick);
+    divCollect.addEventListener("click", onClick);
+
+    </script>
+
+  </body>
+</html>
